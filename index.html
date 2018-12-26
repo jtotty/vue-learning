@@ -2,18 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue Learning</title>
 </head>
 <body>
-    <input type="text" id="input">
+
+    <div id="root">
+        <li v-for="name in names" v-text="name"></li>
+
+        <input id="input" type="text" v-model="newName">
+        <button @click="addName">Add Name</button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <script>
-        let data = {
-            message: 'Hello World'
-        };
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                newName: '',
+                names: ['Joe', 'Mary', 'Jane', 'Jack']
+            },
+
+            methods: {
+                addName() {
+                    this.names.push(this.newName);
+                    this.newName = '';
+                }
+            }
+        });
+
     </script>
 </body>
 </html>
