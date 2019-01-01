@@ -5,35 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <style>
+        body { padding: 40px; }
+    </style>
 </head>
 <body>
 
-    <div id="root">
-        <li v-for="name in names" v-text="name"></li>
-
-        <input id="input" type="text" v-model="newName">
-        <button @click="addName">Add Name</button>
+    <div id="root" class="container">
+        <message title="Hello World" body="Lorem ipsum dolar sit amet."></message>
+        <message title="Second Message" body="First man on the moon."></message>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <script>
-
-        var app = new Vue({
-            el: '#root',
-            data: {
-                newName: '',
-                names: ['Joe', 'Mary', 'Jane', 'Jack']
-            },
-
-            methods: {
-                addName() {
-                    this.names.push(this.newName);
-                    this.newName = '';
-                }
-            }
-        });
-
-    </script>
+    <script src="build/app.js"></script>
 </body>
 </html>
