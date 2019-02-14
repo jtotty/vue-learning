@@ -11,21 +11,10 @@
     </style>
 </head>
 <body>
-
     <div id="root" class="container">
-        <tabs>
-            <tab name="About Us" :selected="true">
-                <h1>Here is the content for the about us tab.</h1>
-            </tab>
+        <coupon @applied="onCouponApplied"></coupon>
 
-            <tab name="About Our Culture">
-                <h1>Here is the content for the about our culture tab.</h1>
-            </tab>
-
-            <tab name="About Our Vision">
-                <h1>Here is the content for the about our vision tab.</h1>
-            </tab>
-        </tabs>
+        <h1 v-if="couponApplied">You used a coupon!</h1>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
